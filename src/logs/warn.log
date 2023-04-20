@@ -1,0 +1,25 @@
+2023-04-13T16:47:51.268Z error: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle
+[4m[19/4/2023, 10:53:13][0m [33mwarn[39m:    User already exists
+[4m[19/4/2023, 11:00:31][0m [33mwarn[39m:    User already exists
+[4m[19/4/2023, 11:02:01][0m [33mwarn[39m:    User already exists
+2023-04-19T14:20:02.684Z warn: User already exists
+2023-04-19T15:08:18.574Z warn: User already exists
+2023-04-19T15:08:19.717Z warn: User already exists
+2023-04-19T15:08:20.801Z warn: User already exists
+2023-04-19T15:08:21.129Z warn: User already exists
+2023-04-19T15:08:21.290Z warn: User already exists
+2023-04-19T15:08:21.437Z warn: User already exists
+2023-04-19T15:08:21.571Z warn: User already exists
+2023-04-19T15:08:23.203Z warn: User already exists
+2023-04-19T15:08:23.374Z warn: User already exists
+2023-04-19T15:08:23.568Z warn: User already exists
+2023-04-19T15:08:23.734Z warn: User already exists
+2023-04-19T15:08:23.874Z warn: User already exists
+2023-04-19T15:08:24.038Z warn: User already exists
+2023-04-19T15:53:45.859Z warn: User Not Found with username 321@gmail.com
+2023-04-19T15:54:39.093Z error: Invalid Password
+2023-04-19T16:50:52.528Z error: Cannot create property 'Symbol(level)' on string 'Connected to MongoDB Atlas'
+2023-04-19T17:02:56.055Z warn: User Not Found with username asd@asd.com

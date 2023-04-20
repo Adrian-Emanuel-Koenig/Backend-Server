@@ -1,0 +1,6 @@
+2023-04-13T16:47:51.268Z error: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle
+2023-04-19T15:54:39.093Z error: Invalid Password
+2023-04-19T16:50:52.528Z error: Cannot create property 'Symbol(level)' on string 'Connected to MongoDB Atlas'
