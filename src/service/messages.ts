@@ -1,5 +1,4 @@
 import { Message } from "../model/messages";
-import { Product } from "../model/products";
 import MessagesDAO from "../persistence/dao/messages";
 import logger from "../utils/logger/winston";
 
@@ -13,16 +12,6 @@ const createService = async (data: Message): Promise<void> => {
     throw error;
   }
 };
-
-// const readAllService = async (): Promise<Message[]> => {
-//     try {
-//       const products = await MessagesDAO.readAll();
-//       return products;
-//     } catch (error) {
-//       logger.error(error);
-//       throw error;
-//     }
-//   };
 
 const readOneService = async (
   data: string

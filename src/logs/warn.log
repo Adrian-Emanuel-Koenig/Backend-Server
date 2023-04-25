@@ -35,3 +35,5 @@
 2023-04-25T02:04:56.251Z error: Invalid Password
 2023-04-25T02:06:58.361Z error: Invalid Password
 2023-04-25T12:58:17.010Z error: Invalid Password
+2023-04-25T16:29:40.809Z error: Error creating item: ValidationError: cart.0._id: Cast to Number failed for value "643834b6aa8591cc35529037" (type string) at path "_id", cart.1._id: Cast to Number failed for value "6440283cbdd38ab20f7fe7e2" (type string) at path "_id", cart.2._id: Cast to Number failed for value "6440290ebdd38ab20f7fe7e9" (type string) at path "_id"
+2023-04-25T16:29:40.812Z error: Error: Error creating item: ValidationError: cart.0._id: Cast to Number failed for value "643834b6aa8591cc35529037" (type string) at path "_id", cart.1._id: Cast to Number failed for value "6440283cbdd38ab20f7fe7e2" (type string) at path "_id", cart.2._id: Cast to Number failed for value "6440290ebdd38ab20f7fe7e9" (type string) at path "_id"

@@ -11,6 +11,7 @@ import { config } from "dotenv";
 import { sessionMongo } from "./database/connection/session";
 import { Server as SocketServer } from "socket.io";
 import { routerMessages } from "./routing/messages";
+import { routerCart } from "./routing/cart";
 config();
 
 const app: express.Application = express();
@@ -26,7 +27,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use("/", routerProducts);
 app.use("/", routerUsers);
-app.use("/", routerMessages)
+app.use("/", routerMessages);
+app.use("/", routerCart)
 app.enable("trust proxy");
 
 io.on("connection", (socket) => {

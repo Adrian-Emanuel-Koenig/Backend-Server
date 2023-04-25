@@ -25,6 +25,7 @@ const dotenv_1 = require("dotenv");
 const session_1 = require("./database/connection/session");
 const socket_io_1 = require("socket.io");
 const messages_1 = require("./routing/messages");
+const cart_1 = require("./routing/cart");
 (0, dotenv_1.config)();
 const app = (0, express_1.default)();
 const port = 8080;
@@ -39,6 +40,7 @@ app.use(passport_1.default.session());
 app.use("/", products_1.routerProducts);
 app.use("/", users_1.routerUsers);
 app.use("/", messages_1.routerMessages);
+app.use("/", cart_1.routerCart);
 app.enable("trust proxy");
 io.on("connection", (socket) => {
     console.log("user connected");

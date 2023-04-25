@@ -15,7 +15,7 @@ class MemoryCrud {
     });
   }
 
-  async readAll(): Promise<Product[]> {
+  async readAll(): Promise<Product[] | any > {
     try {
       const objects = this.data;
       return objects;
