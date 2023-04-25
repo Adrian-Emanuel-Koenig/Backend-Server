@@ -23,3 +23,15 @@
 2023-04-19T15:54:39.093Z error: Invalid Password
 2023-04-19T16:50:52.528Z error: Cannot create property 'Symbol(level)' on string 'Connected to MongoDB Atlas'
 2023-04-19T17:02:56.055Z warn: User Not Found with username asd@asd.com
+2023-04-24T19:03:10.990Z error: Cast to string failed for value "{}" (type Object) at path "username" for model "Message"
+2023-04-24T19:05:59.505Z error: Cast to string failed for value "{}" (type Object) at path "username" for model "Message"
+2023-04-25T01:02:58.716Z error: Cast to string failed for value "{ username: 'adrian@gmail.com' }" (type Object) at path "username" for model "Message"
+2023-04-25T01:05:11.201Z error: Cast to string failed for value "{ username: 'adrian@gmail.com' }" (type Object) at path "username" for model "Message"
+2023-04-25T01:05:37.979Z error: Cast to string failed for value "{ username: 'adrian@gmail.com' }" (type Object) at path "username" for model "Message"
+2023-04-25T02:04:35.809Z warn: User Not Found with username koenig@gmail.com
+2023-04-25T02:04:37.097Z warn: User Not Found with username koenig@gmail.com
+2023-04-25T02:04:40.971Z warn: User Not Found with username koenig@gmail.com
+2023-04-25T02:04:48.969Z warn: User Not Found with username koenig@gmail.com
+2023-04-25T02:04:56.251Z error: Invalid Password
+2023-04-25T02:06:58.361Z error: Invalid Password
+2023-04-25T12:58:17.010Z error: Invalid Password

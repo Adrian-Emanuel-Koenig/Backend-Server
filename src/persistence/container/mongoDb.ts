@@ -22,6 +22,15 @@ class MongoCrud<T extends Document> {
     return item;
   }
 
+  async chat(username: string): Promise<T | null| {}> {
+    const item = await this.model.find({ username });
+    if (!item) {
+      console.log(item);
+      return null;
+    }
+    return item;
+  }
+
   async readAll(): Promise<T[]> {
     const items = await this.model.find({});
     return items;

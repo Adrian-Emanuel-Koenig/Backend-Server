@@ -10,13 +10,15 @@ const passport_config_1 = require("../utils/middleware/passport-config");
 exports.routerUsers = (0, express_1.Router)();
 exports.routerUsers.get("/api/username", (req, res) => {
     const username = req.user;
-    res.json(username);
+    const nombre = username.username;
+    console.log(nombre);
+    res.json(nombre);
 });
 exports.routerUsers.post("/api/login", passport_1.default.authenticate(passport_config_1.passLog), (req, res) => {
     const username = req.user;
     const nombre = username.username;
     console.log(nombre);
-    res.json("Usuario conectado: " + nombre);
+    res.json({ nombre });
 });
 exports.routerUsers.post("/api/signup", passport_1.default.authenticate(passport_config_1.passSign), (req, res) => {
     res.json("Hello");

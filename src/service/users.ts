@@ -8,10 +8,6 @@ const createService = async (data: User): Promise<void> => {
       data &&
       data.name &&
       data.surname &&
-      // data.age &&
-      // data.address &&
-      // data.number &&
-      // data.avatar &&
       data.username &&
       data.password
     ) {

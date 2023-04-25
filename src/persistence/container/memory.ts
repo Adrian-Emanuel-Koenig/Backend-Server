@@ -49,6 +49,10 @@ class MemoryCrud {
       resolve();
     });
   }
+
+  chat(data:any){
+    console.log(data)
+  }
 }
 
 export default MemoryCrud;

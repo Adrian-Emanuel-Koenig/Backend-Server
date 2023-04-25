@@ -56,5 +56,8 @@ class MemoryCrud {
             resolve();
         });
     }
+    chat(data) {
+        console.log(data);
+    }
 }
 exports.default = MemoryCrud;

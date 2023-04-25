@@ -16,7 +16,7 @@ routerUsers.post("/api/login", passport.authenticate(passLog), (req, res) => {
   const username = req.user as User;
   const nombre = username.username;
   console.log(nombre);
-  res.json("Usuario conectado: " + nombre);
+  res.json({nombre});
 });
 routerUsers.post("/api/signup", passport.authenticate(passSign), (req, res) => {
   res.json("Hello");

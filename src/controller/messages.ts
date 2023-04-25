@@ -1,55 +1,31 @@
-// import Message from '../models/message.js'
+import { Request, Response } from "express";
+import { createService, readOneService } from "../service/messages";
+import logger from "../utils/logger/winston";
 
-// var controller = {
-//     //Función para guardar un mensaje
-//     save: (req, res) => {
-//         var params = req.body
-//         var message = new Message()
-//         message.message = params.message
-//         message.from = params.from
-//         console.log(message)
-//         message.save((error, messageStored) =>{
-//             if(error || !messageStored){
-//                 return res.status(404).send({
-//                     status: 'error',
-//                     message: 'No ha sido posible guardar el mensaje'
-//                 })
-//             }
-//             return res.status(200).send({
-//                 status: 'success',
-//                 messageStored
-//             })
+const createController = async (req: Request, res: Response): Promise<void> => {
+  try {
+    await createService(req.body);
+    res.status(201).json({
+      status: true,
+      message: "Product successfully saved",
+    });
+  } catch (error: any) {
+    logger.error(error, `${error}`);
+  }
+};
 
-//         })
-//     },
+const readOneController = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { username } = req.params;
+    const message = await readOneService(username);
+    res.json(message);
+  } catch (error: any) {
+    logger.error(error, `${error}`);
+  }
+};
 
-//     //Función para obtener los mensajes
-//     getMessages: (req, res) => {
-//         var query = Message.find({})
 
-//         query.sort('-_id').exec((error, messages) => {
-//             if(error){
-// 				return res.status(500).send({
-// 					status: "error",
-// 					message: "Error al extraer los datos"
-// 				})
-// 			}
-
-// 			//Si no existen artículos:
-// 			if(!messages){
-// 				return res.status(404).send({
-// 					status: "error",
-// 					message: "No hay mensajes para mostrar"
-// 				})
-// 			}
-
-// 			return res.status(200).send({
-// 				status: "success",
-// 				messages
-// 			})
-
-//         })
-//     }
-// }
-
-// export default controllerMessage
+export { createController, readOneController };
