@@ -31,7 +31,7 @@ const readOneService = async (
     data: string
   ): Promise<Cart | null | undefined | {}> => {
     try {
-      return await CartDAO.chat(data);
+      return await CartDAO.readUsername(data);
     } catch (error) {
       logger.error(error);
     }

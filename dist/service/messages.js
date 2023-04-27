@@ -30,7 +30,7 @@ exports.createService = createService;
 const readOneService = (data) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         console.log(data);
-        return yield messages_1.default.chat(data);
+        return yield messages_1.default.readUsername(data);
     }
     catch (error) {
         winston_1.default.error(error);

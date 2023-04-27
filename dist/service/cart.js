@@ -42,7 +42,7 @@ const readAllService = () => __awaiter(void 0, void 0, void 0, function* () {
 exports.readAllService = readAllService;
 const readOneService = (data) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        return yield cart_1.default.chat(data);
+        return yield cart_1.default.readUsername(data);
     }
     catch (error) {
         winston_1.default.error(error);

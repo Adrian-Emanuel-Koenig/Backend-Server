@@ -56,7 +56,7 @@ class MemoryCrud {
             resolve();
         });
     }
-    chat(data) {
+    readUsername(data) {
         console.log(data);
     }
 }

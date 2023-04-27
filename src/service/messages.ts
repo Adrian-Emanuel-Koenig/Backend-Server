@@ -18,7 +18,7 @@ const readOneService = async (
 ): Promise<Message | null | undefined | {}> => {
   try {
     console.log(data);
-    return await MessagesDAO.chat(data);
+    return await MessagesDAO.readUsername(data);
   } catch (error) {
     logger.error(error);
   }

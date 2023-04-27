@@ -35,11 +35,10 @@ class MongoCrud {
             return item;
         });
     }
-    chat(username) {
+    readUsername(username) {
         return __awaiter(this, void 0, void 0, function* () {
             const item = yield this.model.find({ username });
             if (!item) {
-                console.log(item);
                 return null;
             }
             return item;
