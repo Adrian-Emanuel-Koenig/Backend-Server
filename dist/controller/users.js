@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createController = void 0;
+exports.logout = exports.getUsername = exports.createController = void 0;
 const users_1 = require("../service/users");
 const winston_1 = __importDefault(require("../utils/logger/winston"));
 const createController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -28,3 +28,26 @@ const createController = (req, res) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.createController = createController;
+const getUsername = (req, res) => {
+    const username = req.user;
+    const nombre = username.username;
+    res.json({
+        status: true,
+        username: nombre
+    });
+};
+exports.getUsername = getUsername;
+const logout = (req, res) => {
+    const username = req.user;
+    const nombre = username.username;
+    req.session.destroy((err) => {
+        if (err) {
+            console.log("Error al desloguear");
+        }
+        else {
+            console.log(nombre + " deslogueado");
+        }
+        res.json(nombre + " deslogueado");
+    });
+};
+exports.logout = logout;

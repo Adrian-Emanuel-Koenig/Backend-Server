@@ -28,15 +28,11 @@ app.use(passport.session());
 app.use("/", routerProducts);
 app.use("/", routerUsers);
 app.use("/", routerMessages);
-app.use("/", routerCart)
+app.use("/", routerCart);
 app.enable("trust proxy");
 
 io.on("connection", (socket) => {
-  console.log("user connected");
-  console.log(socket.id);
-
   socket.on("message", (message, nickname) => {
-    console.log(message);
     socket.emit("message", {
       body: message,
       username: nickname,
