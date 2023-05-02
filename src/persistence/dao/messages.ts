@@ -10,7 +10,6 @@ let MessagesDAO: MemoryCrud | MongoCrud<Message>;
 const mode = process.env.DB;
 
 if (mode == "mongo") {
-  console.log("DB: mongo");
   class UserDaosModel extends MongoCrud<Message> {
     constructor() {
       super(messageModel);
@@ -18,7 +17,6 @@ if (mode == "mongo") {
   }
   MessagesDAO = new UserDaosModel();
 } else if (mode == "memory") {
-  console.log("DB: memory");
   class UserDaosModel extends MemoryCrud {
     constructor() {
       super();

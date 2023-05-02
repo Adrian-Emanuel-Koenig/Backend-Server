@@ -13,24 +13,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const products_1 = require("./routing/products");
-const users_1 = require("./routing/users");
-const connection_1 = require("./database/connection/connection");
 const winston_1 = __importDefault(require("./utils/logger/winston"));
 const passport_1 = __importDefault(require("passport"));
 const http_1 = __importDefault(require("http"));
 const cors_1 = __importDefault(require("cors"));
-const corsConfig_1 = require("./config/corsConfig");
-const dotenv_1 = require("dotenv");
-const session_1 = require("./database/connection/session");
-const socket_io_1 = require("socket.io");
+const products_1 = require("./routing/products");
+const users_1 = require("./routing/users");
 const messages_1 = require("./routing/messages");
 const cart_1 = require("./routing/cart");
+const corsConfig_1 = require("./config/corsConfig");
+const dotenv_1 = require("dotenv");
+const connection_1 = require("./database/connection/connection");
+const session_1 = require("./database/connection/session");
+const socket_1 = require("./database/connection/socket");
 (0, dotenv_1.config)();
 const app = (0, express_1.default)();
-const port = 8080;
 const server = http_1.default.createServer(app);
-const io = new socket_io_1.Server(server, { cors: {} });
+const io = (0, socket_1.configureSocket)(server);
 app.use((0, cors_1.default)(corsConfig_1.configCors));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
@@ -42,15 +41,7 @@ app.use("/", users_1.routerUsers);
 app.use("/", messages_1.routerMessages);
 app.use("/", cart_1.routerCart);
 app.enable("trust proxy");
-io.on("connection", (socket) => {
-    socket.on("message", (message, nickname) => {
-        socket.emit("message", {
-            body: message,
-            username: nickname,
-        });
-    });
-});
-server.listen(port, () => __awaiter(void 0, void 0, void 0, function* () {
+server.listen(process.env.PORT, () => __awaiter(void 0, void 0, void 0, function* () {
     yield connection_1.connectionMDB;
-    winston_1.default.info(`Server on: http://localhost:${port}`);
+    winston_1.default.info(`Server on: http://localhost:${process.env.PORT}`);
 }));

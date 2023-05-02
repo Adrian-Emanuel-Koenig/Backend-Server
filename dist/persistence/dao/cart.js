@@ -11,7 +11,6 @@ dotenv_1.default.config();
 let CartDAO;
 const mode = process.env.DB;
 if (mode == "mongo") {
-    console.log("DB: mongo");
     class UserDaosModel extends mongoDb_1.default {
         constructor() {
             super(cart_1.cartModel);
@@ -20,7 +19,6 @@ if (mode == "mongo") {
     CartDAO = new UserDaosModel();
 }
 else if (mode == "memory") {
-    console.log("DB: memory");
     class UserDaosModel extends memory_1.default {
         constructor() {
             super();

@@ -1,4 +1,5 @@
 import { Product, productModel } from "../../model/products";
+import logger from "../../utils/logger/winston";
 import MemoryCrud from "../container/memory";
 import MongoCrud from "../container/mongoDb";
 
@@ -10,7 +11,7 @@ let ProductsDAO: MemoryCrud | MongoCrud<Product>;
 const mode = process.env.DB;
 
 if (mode === "mongo") {
-  console.log("DB: mongo");
+  logger.info("DB: mongo");
   class ProdDaosModel extends MongoCrud<Product> {
     constructor() {
       super(productModel);
@@ -18,7 +19,7 @@ if (mode === "mongo") {
   }
   ProductsDAO = new ProdDaosModel();
 } else if (mode === "memory") {
-  console.log("DB: memory");
+  logger.info("DB: memory");
   class ProdDaosModel extends MemoryCrud {
     constructor() {
       super();

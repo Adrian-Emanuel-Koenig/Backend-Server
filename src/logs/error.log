@@ -25,3 +25,27 @@
 2023-04-29T01:05:00.859Z error: Invalid Password
 2023-04-29T01:05:48.486Z error: Invalid Password
 2023-04-29T01:09:44.230Z error: Invalid Password
+2023-05-02T12:30:14.377Z error: Invalid Password
+2023-05-02T15:25:04.351Z error: Object not found
+2023-05-02T15:26:23.848Z error: Object not found
+2023-05-02T15:28:40.985Z error: Object not found
+2023-05-02T15:28:57.867Z error: Object not found
+2023-05-02T15:29:38.387Z error: Object not found
+2023-05-02T15:30:00.415Z error: Object not found
+2023-05-02T15:31:19.458Z error: Error updating item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:31:19.472Z error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:31:19.473Z error: Error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:32:05.029Z error: Error updating item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:32:05.045Z error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:32:05.046Z error: Error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:33:53.815Z error: Error updating item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:33:53.829Z error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:33:53.830Z error: Error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:36:37.985Z error: Error updating item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:36:37.998Z error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:36:38.000Z error: Error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:38:35.583Z error: Error updating item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:38:35.598Z error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:38:35.599Z error: Error: Error deleting item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:54:48.167Z error: Error updating item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"
+2023-05-02T15:56:34.101Z error: Error updating item: CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Product"

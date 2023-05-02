@@ -2,20 +2,23 @@ import { Product } from "../../model/products";
 
 class MemoryCrud {
   private data: Product[];
+  private nextId: number;
 
   constructor() {
     this.data = [];
+    this.nextId = 1; 
   }
 
   create(object: any): Promise<void> {
     return new Promise((resolve, reject) => {
-      this.data.push(object);
-      console.log(object);
+      const product = { ...object, id: this.nextId.toString() };
+      this.nextId++;
+      this.data.push(product);
       resolve();
     });
   }
 
-  async readAll(): Promise<Product[] | any > {
+  async readAll(): Promise<Product[] | any> {
     try {
       const objects = this.data;
       return objects;
@@ -27,7 +30,6 @@ class MemoryCrud {
   read(id: string): Product | undefined {
     const object = this.data.find((obj) => obj.id == id);
     if (!object) {
-      console.log("Product not found");
     }
     return object;
   }
@@ -36,10 +38,13 @@ class MemoryCrud {
     return new Promise((resolve, reject) => {
       const index = this.data.findIndex((obj) => obj.id === id);
       if (index === -1) reject(new Error("Object not found"));
-      this.data.splice(index, 1, newObject);
+      const oldObject = this.data[index];
+      const updatedObject: any = { ...oldObject, ...newObject, id };
+      this.data.splice(index, 1, updatedObject);
       resolve();
     });
   }
+  
 
   delete(id: string): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -50,8 +55,8 @@ class MemoryCrud {
     });
   }
 
-  readUsername(data:any){
-    console.log(data)
+  readUsername(data: any) {
+    console.log(data);
   }
 }
 
