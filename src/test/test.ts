@@ -50,20 +50,4 @@ describe("PUT ONE", () => {
   });
 });
 
-// describe("DELETE ONE", () => {
-//     it("deberia eliminar un posteo", function (done) {
-//         this.timeout(5000);
-//         const post = generatePost();
-//         request.post("/api/productos").send(post).then((res) => {
-//           const postId = res.body.id;
-//           request.delete(`/api/productos/${postId}`).then((deleteRes) => {
-//             expect(deleteRes.status).to.eql(200);
-//             expect(deleteRes.body).to.be.a("object");
-//             expect(deleteRes.body).to.include.keys("status", "message");
-//             done();
-//           }).catch(done);
-//         }).catch(done);
-//       });
-      
-// });
 
