@@ -12,6 +12,8 @@ export interface Cart extends Document {
   username: string;
   cart: CartItem[];
   date: Date;
+  totalPrice: number; 
+  orderStatus: boolean; 
 }
 
 const cartSchema = new Schema<Cart>({
@@ -29,6 +31,8 @@ const cartSchema = new Schema<Cart>({
     required: true,
   },
   date: { type: Date, default: Date.now },
+  totalPrice: { type: Number }, 
+  orderStatus: { type: Boolean }, 
 });
 
 export const cartModel = mongoose.model<Cart>("Cart", cartSchema);

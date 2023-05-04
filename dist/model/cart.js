@@ -40,5 +40,7 @@ const cartSchema = new mongoose_1.Schema({
         required: true,
     },
     date: { type: Date, default: Date.now },
+    totalPrice: { type: Number },
+    orderStatus: { type: Boolean },
 });
 exports.cartModel = mongoose_1.default.model("Cart", cartSchema);

@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.readOneService = exports.createService = void 0;
+exports.readAllService = exports.readOneService = exports.createService = void 0;
 const messages_1 = __importDefault(require("../persistence/dao/messages"));
 const winston_1 = __importDefault(require("../utils/logger/winston"));
 const createService = (data) => __awaiter(void 0, void 0, void 0, function* () {
@@ -29,7 +29,6 @@ const createService = (data) => __awaiter(void 0, void 0, void 0, function* () {
 exports.createService = createService;
 const readOneService = (data) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log(data);
         return yield messages_1.default.readUsername(data);
     }
     catch (error) {
@@ -37,3 +36,14 @@ const readOneService = (data) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.readOneService = readOneService;
+const readAllService = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const message = yield messages_1.default.readAll();
+        return message;
+    }
+    catch (error) {
+        winston_1.default.error(error);
+        throw error;
+    }
+});
+exports.readAllService = readAllService;

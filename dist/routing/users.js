@@ -14,5 +14,3 @@ exports.routerUsers.get("/api/username", auth_1.isAuth, users_1.getUsername);
 exports.routerUsers.post("/api/login", passport_1.default.authenticate(passport_config_1.passLog), users_1.getUsername);
 exports.routerUsers.post("/api/signup", passport_1.default.authenticate(passport_config_1.passSign), users_1.getUsername);
 exports.routerUsers.get("/api/logout", users_1.logout);
-exports.routerUsers.put("/api/users/:id");
-exports.routerUsers.delete("/api/users/:id");

@@ -10,5 +10,4 @@ routerUsers.get("/api/username", isAuth, getUsername);
 routerUsers.post("/api/login", passport.authenticate(passLog), getUsername);
 routerUsers.post("/api/signup", passport.authenticate(passSign), getUsername);
 routerUsers.get("/api/logout", logout);
-routerUsers.put("/api/users/:id");
-routerUsers.delete("/api/users/:id");
+

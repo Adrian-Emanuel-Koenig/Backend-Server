@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.readOneController = exports.createController = void 0;
+exports.readAllController = exports.readOneController = exports.createController = void 0;
 const messages_1 = require("../service/messages");
 const winston_1 = __importDefault(require("../utils/logger/winston"));
 const createController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -39,3 +39,13 @@ const readOneController = (req, res) => __awaiter(void 0, void 0, void 0, functi
     }
 });
 exports.readOneController = readOneController;
+const readAllController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const message = yield (0, messages_1.readAllService)();
+        res.json(message);
+    }
+    catch (error) {
+        winston_1.default.error(error, `${error}`);
+    }
+});
+exports.readAllController = readAllController;

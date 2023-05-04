@@ -17,10 +17,19 @@ const readOneService = async (
   data: string
 ): Promise<Message | null | undefined | {}> => {
   try {
-    console.log(data);
     return await MessagesDAO.readUsername(data);
   } catch (error) {
     logger.error(error);
   }
 };
-export { createService, readOneService };
+
+const readAllService = async (): Promise<Message[]> => {
+  try {
+    const message = await MessagesDAO.readAll();
+    return message;
+  } catch (error) {
+    logger.error(error);
+    throw error;
+  }
+};
+export { createService, readOneService, readAllService };

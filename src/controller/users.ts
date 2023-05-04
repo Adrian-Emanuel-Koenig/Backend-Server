@@ -29,11 +29,13 @@ const logout = (req: Request, res: Response) => {
   const nombre = username.username;
   req.session.destroy((err) => {
     if (err) {
-      console.log("Error al desloguear");
+      logger.info("Error al desloguear"+ err);
     } else {
-      console.log(nombre + " deslogueado");
+      logger.info(nombre + " deslogueado");
     }
     res.json(nombre + " deslogueado");
   });
 }
+
+
 export { createController, getUsername, logout };

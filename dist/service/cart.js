@@ -17,10 +17,13 @@ const cart_1 = __importDefault(require("../persistence/dao/cart"));
 const winston_1 = __importDefault(require("../utils/logger/winston"));
 const createService = (data) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        if (data &&
-            data.username &&
-            data.cart) {
-            yield cart_1.default.create(data);
+        if (data && data.username && data.cart) {
+            let totalPrice = 0;
+            for (const item of data.cart) {
+                totalPrice += item.precio;
+            }
+            const cartData = Object.assign(Object.assign({}, data), { totalPrice });
+            yield cart_1.default.create(cartData);
         }
     }
     catch (error) {

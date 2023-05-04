@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { createService, readOneService } from "../service/messages";
+import { createService, readOneService, readAllService } from "../service/messages";
 import logger from "../utils/logger/winston";
 
 const createController = async (req: Request, res: Response): Promise<void> => {
@@ -27,5 +27,16 @@ const readOneController = async (
   }
 };
 
+const readAllController = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const message = await readAllService();
+    res.json(message);
+  } catch (error: any) {
+    logger.error(error, `${error}`);
+  }
+};
 
-export { createController, readOneController };
+export { createController, readOneController, readAllController };

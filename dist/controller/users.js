@@ -42,10 +42,10 @@ const logout = (req, res) => {
     const nombre = username.username;
     req.session.destroy((err) => {
         if (err) {
-            console.log("Error al desloguear");
+            winston_1.default.info("Error al desloguear" + err);
         }
         else {
-            console.log(nombre + " deslogueado");
+            winston_1.default.info(nombre + " deslogueado");
         }
         res.json(nombre + " deslogueado");
     });

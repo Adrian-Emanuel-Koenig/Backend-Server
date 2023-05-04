@@ -4,12 +4,18 @@ import logger from "../utils/logger/winston";
 
 const createService = async (data: Cart): Promise<void> => {
   try {
-    if (
-      data &&
-      data.username&&
-      data.cart 
-    ) {
-      await CartDAO.create(data);
+    if (data && data.username && data.cart) {
+      let totalPrice = 0;
+      for (const item of data.cart) {
+        totalPrice += item.precio;
+      }
+      
+      const cartData: any = {
+        ...data,
+        totalPrice
+      };
+
+      await CartDAO.create(cartData);
     }
   } catch (error) {
     logger.error(error);
